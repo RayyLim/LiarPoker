@@ -32,11 +32,8 @@ public class MainActivity extends Activity {
     	
     	// Get player's name
     	// BUG: Need to check if chatroom already has a player w/ the same name
-    	// BUG: Press button w/o filling player name (Set up a default player name?)
     	EditText editText = (EditText) findViewById(R.id.edit_message);
     	String playername = editText.getText().toString();
     	intent.putExtra(PLAYERNAME, playername);
-    	startActivity(intent);
-
     }
 }

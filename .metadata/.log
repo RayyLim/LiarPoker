@@ -247,3 +247,6 @@ Binding(CTRL+SHIFT+\,
 
 !ENTRY org.eclipse.ui 2 2 2012-07-21 15:40:30.648
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui 4 4 2012-07-21 16:04:12.108
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.

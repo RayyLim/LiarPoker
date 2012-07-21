@@ -1,0 +1,26 @@
+package com.example.liarpoker;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class WaitRoomActivity extends Activity {
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+     // Get the message from the intent
+        Intent intent = getIntent();
+        String playername = intent.getStringExtra(MainActivity.PLAYERNAME);
+
+        // Create the text view
+        TextView textView = new TextView(this);
+        textView.setTextSize(40);
+        textView.setText("Your name: " + playername);
+
+        setContentView(textView);
+
+    }
+
+}
