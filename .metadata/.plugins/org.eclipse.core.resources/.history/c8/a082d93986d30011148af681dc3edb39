@@ -7,5 +7,4 @@
     <string name="button_send">SEND!</string>
 <string name="liarpokertitle">Liar Poker</string>
 <string name="button_joingame">Join Game</string>
-<string name="enteryourname_message">Enter Your Name</string>
 </resources>
