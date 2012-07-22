@@ -56,8 +56,7 @@
 			    android:id="@+id/notLiarButton"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:text="mmm No?" 
-			    android:onClick="NotLiarButtonPressed"/>
+			    android:text="mmm No?" />
 			</LinearLayout>
 			</LinearLayout>
 
@@ -114,8 +113,21 @@
 			    android:onClick="submit"/>
 	</LinearLayout>
 
-
+			<Button
+			    android:id="@+id/testMyTurn"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="Make it my turn" 
+			    android:onClick="fakeMyTurn"/>
 											
+			<Button
+			    android:id="@+id/testNextPlayerTurn"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="Next player's turn"
+			    android:onClick="fakeNewCurrentPlayer" 
+			    />
+			
 			
 						<Button
 			    android:id="@+id/testRandomEntryForPlayer"

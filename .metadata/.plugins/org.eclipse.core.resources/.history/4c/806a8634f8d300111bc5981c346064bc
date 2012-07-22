@@ -75,25 +75,18 @@ public class GameService extends Service
 	
 	static int  notLiarButtonPressed = 0;
 	
-	// BUG: Need to ignore all Liar presses and notButton presses after sendCurrentPlayerChanged(), in case the presses were for other player
-	// BUG: NotLiar button should be greyed until change players... so can not send not liar multiple times
+	// BUG: Need to ignore all Liar presses and notButton presses after sendCurrentPlayerChanged(), incase the presses were for other player
 	public static void pressedNotLiarButton(String forPlayer)
 	{
 		if(forPlayer == currentPlayerIs)
 		{
 			notLiarButtonPressed++;
 		
-			if(notLiarButtonPressed == WaitRoomActivity.playerlistArrayList.size() - 1)
+			if(notLiarButtonPressed == WaitRoomActivity.playerlistArrayList.size())
 			{
 				sendCurrentPlayerChanged();
 			}
 		}
-	}
-	
-	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
-	public static void pressedLiarButton(String forPlayer)
-	{
-		// Tell everyone detected liar button pressed
 	}
 	
 

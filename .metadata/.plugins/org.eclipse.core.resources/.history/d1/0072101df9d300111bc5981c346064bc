@@ -114,11 +114,6 @@ public class GameRoomActivity extends Activity
 		GameService.pressedNotLiarButton(currentPlayerIs);
 	}
 	
-	public void LiarButtonPressed(View view)
-	{
-		GameService.pressedLiarButton(currentPlayerIs);
-	}
-	
 	public void fakeRandomCurrentPlayerHas(View view)
 	{
 		int randomNumber = (int)(Math.random()*10);
@@ -130,10 +125,16 @@ public class GameRoomActivity extends Activity
 	
 	// BUG: What happens if someone leaves the game?
 	
+	public void fakeNewCurrentPlayer(View view)
+	{
+		this.playerPosition = (this.playerPosition+1)%WaitRoomActivity.playerlistArrayList.size();
+		ResetCurrentPlayer();
+	}
 	
 	public void fakeNoOneCallsLiar(View view)
 	{
-		GameService.pressedNotLiarButton(currentPlayerIs);
+		this.playerPosition = (this.playerPosition+1)%WaitRoomActivity.playerlistArrayList.size();
+		ResetCurrentPlayer();
 	}
 	
 	public void fakeSomeoneCallsLiar(View view)
@@ -182,6 +183,10 @@ public class GameRoomActivity extends Activity
 	
 	private void UpdateGameUI()
 	{
+		
+		//notMyTurnLayout
+		
+		// String currentPlayerIs = WaitRoomActivity.playerlistArrayList.get(this.playerPosition);
 		LinearLayout notMyTurnLayout = (LinearLayout) findViewById(R.id.notMyTurnLayout);
 		LinearLayout myTurnLayout = (LinearLayout) findViewById(R.id.myTurnLayout);
 		
