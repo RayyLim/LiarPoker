@@ -70,11 +70,6 @@ public class GameRoomActivity extends Activity
 				{
 					public void run()
 					{
-						EditText numberText = (EditText) findViewById(R.id.igotnumber);
-						EditText amountText = (EditText) findViewById(R.id.igotamount); 		
-						
-						numberText.setText("");
-						amountText.setText("");
 						ResetCurrentPlayer();
 					}
 				});
@@ -226,7 +221,12 @@ public class GameRoomActivity extends Activity
 			
 			Button submitButton = (Button) findViewById(R.id.submitButton);
 			submitButton.setEnabled(false);
-		
+			
+//			EditText numberText = (EditText) findViewById(R.id.igotnumber);
+//			EditText amountText = (EditText) findViewById(R.id.igotamount); 		
+//			
+//			numberText.setText("");
+//			amountText.setText("");
 		}
 		else
 		{

@@ -72,7 +72,6 @@ public class GameService extends Service
 	static int  notLiarButtonPressed = 0;
 	static boolean handSubmitted = false;
 	
-	// TODO: check correct usage of Timer
 	public static void submitHand(String player, int amount, int number)
 	{
 		

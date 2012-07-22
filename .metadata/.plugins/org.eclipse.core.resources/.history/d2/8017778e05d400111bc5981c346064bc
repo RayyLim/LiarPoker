@@ -70,11 +70,6 @@ public class GameRoomActivity extends Activity
 				{
 					public void run()
 					{
-						EditText numberText = (EditText) findViewById(R.id.igotnumber);
-						EditText amountText = (EditText) findViewById(R.id.igotamount); 		
-						
-						numberText.setText("");
-						amountText.setText("");
 						ResetCurrentPlayer();
 					}
 				});
@@ -139,7 +134,7 @@ public class GameRoomActivity extends Activity
 		GameService.pressedLiarButton(currentPlayerIs);
 		Button liarButton = (Button) findViewById(R.id.liarButton);
 		liarButton.setEnabled(false);
-
+		
 		Button notLiarButton = (Button) findViewById(R.id.notLiarButton);
 		notLiarButton.setEnabled(false);
 	}
@@ -191,6 +186,8 @@ public class GameRoomActivity extends Activity
 		EditText amountText = (EditText) findViewById(R.id.igotamount); 		
 		Button submitButton = (Button) findViewById(R.id.submitButton);
 		
+		Log.d("RAY", numberText.getText().toString());
+		
 		boolean enabled = checkEditTextNotEmpty(numberText) && checkEditTextNotEmpty(amountText);
 		submitButton.setEnabled(enabled);
 
@@ -203,13 +200,7 @@ public class GameRoomActivity extends Activity
 	
 	public void submit(View view)
 	{
-		EditText numberText = (EditText) findViewById(R.id.igotnumber);
-		EditText amountText = (EditText) findViewById(R.id.igotamount); 
-		
-		int number = Integer.parseInt(numberText.getText().toString());
-		int amount = Integer.parseInt(amountText.getText().toString());
-		
-		GameService.submitHand(WaitRoomActivity.myPlayerName, amount, number);
+	
 	}
 	
 	String currentPlayerIs = "Loading ..."; 
@@ -226,7 +217,12 @@ public class GameRoomActivity extends Activity
 			
 			Button submitButton = (Button) findViewById(R.id.submitButton);
 			submitButton.setEnabled(false);
-		
+			
+			EditText numberText = (EditText) findViewById(R.id.igotnumber);
+			EditText amountText = (EditText) findViewById(R.id.igotamount); 		
+			
+			numberText.setText("");
+			amountText.setText("");
 		}
 		else
 		{
