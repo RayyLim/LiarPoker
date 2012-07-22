@@ -3,8 +3,12 @@ package com.example.liarpoker;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,6 +44,22 @@ public class GameRoomActivity extends Activity
         
         UpdateGameUI();
         
+		EditText numberText = (EditText) findViewById(R.id.igotnumber);
+		EditText amountText = (EditText) findViewById(R.id.igotamount);
+		
+		
+		numberText.addTextChangedListener(new TextWatcher(){
+			public void afterTextChanged(Editable s){updateSubmitButton();}
+			public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+			public void onTextChanged(CharSequence s, int start, int before, int count){}
+		});
+		
+		amountText.addTextChangedListener(new TextWatcher(){
+			public void afterTextChanged(Editable s){updateSubmitButton();}
+			public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+			public void onTextChanged(CharSequence s, int start, int before, int count){}
+		});
+        
 	}
 	
 	public void fakeRandomCurrentPlayerHas(View view)
@@ -50,6 +70,8 @@ public class GameRoomActivity extends Activity
 		currentPlayerHas = Integer.toString(randomCount) + " of " + Integer.toString(randomNumber) ;
 		UpdateGameUI();
 	}
+	
+	// BUG: What happens if someone leaves the game?
 	
 	public void fakeNewCurrentPlayer(View view)
 	{
@@ -82,6 +104,24 @@ public class GameRoomActivity extends Activity
         UpdateGameUI();
 	}
 	
+	public void updateSubmitButton()
+	{
+		EditText numberText = (EditText) findViewById(R.id.igotnumber);
+		EditText amountText = (EditText) findViewById(R.id.igotamount); 		
+		Button submitButton = (Button) findViewById(R.id.submitButton);
+		
+		Log.d("RAY", numberText.getText().toString());
+		
+		boolean enabled = checkEditTextNotEmpty(numberText) && checkEditTextNotEmpty(amountText);
+		submitButton.setEnabled(enabled);
+
+	}
+	
+	private boolean checkEditTextNotEmpty(EditText edit)
+	{
+		return !edit.getText().toString().equals("");
+	}
+	
 	public void submit(View view)
 	{
 	
@@ -100,6 +140,15 @@ public class GameRoomActivity extends Activity
 		{
 			notMyTurnLayout.setVisibility(View.GONE);
 			myTurnLayout.setVisibility(View.VISIBLE);
+			
+			Button submitButton = (Button) findViewById(R.id.submitButton);
+			submitButton.setEnabled(false);
+			
+			EditText numberText = (EditText) findViewById(R.id.igotnumber);
+			EditText amountText = (EditText) findViewById(R.id.igotamount); 		
+			
+			numberText.setText("");
+			amountText.setText("");
 		}
 		else
 		{
