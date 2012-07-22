@@ -64,37 +64,32 @@
                 android:layout_height="wrap_content"
                 android:text="&apos;s are there?" />
         </LinearLayout>
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent" >
-
+
         <TableLayout
             android:id="@+id/resultTable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:layout_weight="8.31"
             android:scrollbars="vertical" >
 
         </TableLayout>
-        </ScrollView>
     </LinearLayout>
-
+
     <TextView
         android:id="@+id/winLoseText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
+        android:layout_gravity="center_horizontal"
         android:text="Loading..."
         android:textSize="30dp" />
-
+
     <Button
         android:id="@+id/newGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
         android:onClick="NewGameClick"
+        android:layout_gravity="center_horizontal"
         android:text="New Game...?" />
 
 </LinearLayout>

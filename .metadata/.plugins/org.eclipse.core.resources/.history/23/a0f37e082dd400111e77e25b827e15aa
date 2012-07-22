@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
@@ -59,25 +57,15 @@ public class ResultActivity extends Activity {
         table.setStretchAllColumns(true);
         TableRow header = new TableRow(this);
         
-        
-        int fontsize = 18;
-        
         TextView headerPlayer = new TextView(this);
-        headerPlayer.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
         headerPlayer.setText("PLAYER");
-        headerPlayer.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
-        headerPlayer.setGravity(Gravity.CENTER_HORIZONTAL);  
-        headerPlayer.setPadding(0, 0, 20, 0);
-        header.addView(headerPlayer, 0);
+        headerPlayer.setTypeface(Typeface.SERIF, Typeface.BOLD); 
+        header.addView(headerPlayer);
         
         TextView headerCount = new TextView(this);
-        headerCount.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
-        headerCount.setText("COUNT");
-        headerCount.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
-        headerCount.setGravity(Gravity.CENTER_HORIZONTAL);  
-        header.addView(headerCount, 1);
-        
-        table.addView(header);
+        headerCount.setText("PLAYER");
+        headerCount.setTypeface(Typeface.SERIF, Typeface.BOLD); 
+        header.addView(headerCount);
         
      // Get Hashtable Enumeration to get key and value
         Enumeration em = playerAmount.keys();
@@ -89,16 +77,10 @@ public class ResultActivity extends Activity {
         		continue;
         	int amount = (Integer)playerAmount.get(player);
 			TableRow row = new TableRow(this);
-			
 			TextView playerView = new TextView(this);
-			playerView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
 			playerView.setText(player);
-			playerView.setGravity(Gravity.CENTER_HORIZONTAL); 
-	        
 			TextView amountView = new TextView(this);
-			amountView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
 			amountView.setText(Integer.toString(amount));
-			amountView.setGravity(Gravity.CENTER_HORIZONTAL); 
 			
 			row.addView(playerView, 0);
 			row.addView(amountView,1);

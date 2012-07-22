@@ -63,17 +63,16 @@ public class ResultActivity extends Activity {
         int fontsize = 18;
         
         TextView headerPlayer = new TextView(this);
-        headerPlayer.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
+        headerPlayer.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
         headerPlayer.setText("PLAYER");
-        headerPlayer.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
+        headerPlayer.setTypeface(Typeface.SERIF, Typeface.BOLD); 
         headerPlayer.setGravity(Gravity.CENTER_HORIZONTAL);  
-        headerPlayer.setPadding(0, 0, 20, 0);
         header.addView(headerPlayer, 0);
         
         TextView headerCount = new TextView(this);
-        headerCount.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
-        headerCount.setText("COUNT");
-        headerCount.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
+        headerCount.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
+        headerCount.setText("PLAYER");
+        headerCount.setTypeface(Typeface.SERIF, Typeface.BOLD); 
         headerCount.setGravity(Gravity.CENTER_HORIZONTAL);  
         header.addView(headerCount, 1);
         
