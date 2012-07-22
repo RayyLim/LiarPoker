@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class WaitRoomActivity extends Activity {
 	
-	private ListView playerList;
+	private static ListView playerList;
 	
-	private ArrayList<String> playerlistArrayList = new ArrayList<String>();
-	private String[] playerlistArray;
+	// BUG: Should this be read-only?
+	public static ArrayList<String> playerlistArrayList = new ArrayList<String>();
+	private static String[] playerlistArray;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,22 +34,34 @@ public class WaitRoomActivity extends Activity {
         textView.setText("Your name: " + playername);
 
         // BUG: List is not scroll-able.... button will not be visible if too many players
-        playerList = (ListView) findViewById(R.id.playerlist);
-
-        AddPlayer();      
+        playerList = (ListView) findViewById(R.id.playerlist);     
+        
+        GetPlayersService.setOnPlayerListUpdateListener(
+        		new PlayerListListener()
+        		{
+        			public void onPlayerListUpdate()
+        			{
+        				runOnUiThread(new Runnable()
+        				{
+        					public void run()
+        					{
+        						UpdatePlayerList();
+        					}
+        				});
+        			}
+        		});
+        
+        startService(new Intent(this, GetPlayersService.class));
     }
 	
-	int playerid = 0;
-	public void AddPlayer(View view)
-	{
-		AddPlayer();
+	@Override
+	protected void onDestroy() {
+	    super.onDestroy();
+	    stopService(new Intent(this, GetPlayersService.class));
 	}
 	
-	private void AddPlayer()
+	public void UpdatePlayerList()
 	{
-		// Add player to private list
-		playerlistArrayList.add(Integer.toString(playerid++));
-		
 		playerlistArray = new String[playerlistArrayList.size()];
 		
 		for(int i = 0; i < playerlistArrayList.size(); i++)
@@ -59,6 +71,10 @@ public class WaitRoomActivity extends Activity {
 		
 	     // By using setAdpater method in listview we an add string array in list.
 		playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));
+
 	}
+	
+
+	
 
 }

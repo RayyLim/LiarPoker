@@ -1,0 +1,7 @@
+package com.example.liarpoker;
+
+import java.util.EventObject;
+
+public class MyEvent extends EventObject {
+
+}

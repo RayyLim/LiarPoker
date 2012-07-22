@@ -1,0 +1,71 @@
+package com.example.liarpoker;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class WaitRoomActivity extends Activity {
+	
+	private static ListView playerList;
+	
+	// BUG: Should this be read-only?
+	public static ArrayList<String> playerlistArrayList = new ArrayList<String>();
+	private static String[] playerlistArray;
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        setContentView(R.layout.waitroom_main);
+        
+        // Get the message from the intent
+        Intent intent = getIntent();
+        String playername = intent.getStringExtra(MainActivity.PLAYERNAME);
+
+        
+        // Create the text view
+        TextView textView = (TextView) findViewById(R.id.textView1);
+        textView.setTextSize(40);
+        textView.setText("Your name: " + playername);
+
+        // BUG: List is not scroll-able.... button will not be visible if too many players
+        playerList = (ListView) findViewById(R.id.playerlist);     
+        
+        startService(new Intent(this, GetPlayersService.class));
+    }
+	
+	@Override
+	protected void onDestroy() {
+	    super.onDestroy();
+	    stopService(new Intent(this, GetPlayersService.class));
+	}
+	
+	public void UpdatePlayerList()
+	{
+		playerlistArray = new String[playerlistArrayList.size()];
+		
+		for(int i = 0; i < playerlistArrayList.size(); i++)
+		{
+			playerlistArray[i] = playerlistArrayList.get(i);
+		}
+		
+	     // By using setAdpater method in listview we an add string array in list.
+		playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));
+
+	}
+	
+
+	
+
+}

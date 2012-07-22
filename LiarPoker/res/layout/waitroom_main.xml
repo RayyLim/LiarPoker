@@ -16,10 +16,9 @@
     </ListView>
     
     <Button
-        android:id="@+id/addplayer"
+        android:id="@+id/startgamebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Player"
-        android:onClick="AddPlayer" />
+        android:text="Start Game"/>
 
 </LinearLayout>
