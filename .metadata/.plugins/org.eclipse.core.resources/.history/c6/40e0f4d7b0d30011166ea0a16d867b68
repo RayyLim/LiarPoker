@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
     	String playername = editText.getText().toString();
     	intent.putExtra(PLAYERNAME, playername);
     	startActivity(intent);
+
     }
 }
 
