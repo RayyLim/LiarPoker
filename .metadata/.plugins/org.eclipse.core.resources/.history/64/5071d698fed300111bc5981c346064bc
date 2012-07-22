@@ -42,14 +42,14 @@ public class GameService extends Service
 		Log.d(TAG, "onStart");
 		
 		// Timer starts after someone has submitted
-		timer.schedule( new TimerTask() 
+		timer.scheduleAtFixedRate( new TimerTask() 
 		{ 
 			public void run() 
 			{ 
 				sendCurrentPlayerChanged();
 			} 
 		 
-		}, 5000);
+		}, 0, 15000);
 		
 	}
 	
