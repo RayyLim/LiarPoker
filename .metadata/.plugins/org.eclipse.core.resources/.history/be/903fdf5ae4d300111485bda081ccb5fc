@@ -90,11 +90,6 @@ public class GameRoomActivity extends Activity
         UpdateGameUI();
 	}
 	
-	public void submit(View view)
-	{
-	
-	}
-	
 	private void UpdateGameUI()
 	{
 		
