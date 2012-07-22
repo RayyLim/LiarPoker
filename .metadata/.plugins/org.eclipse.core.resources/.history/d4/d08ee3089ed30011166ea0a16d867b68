@@ -14,8 +14,8 @@ public class WaitRoomActivity extends Activity {
 	
 	private ListView playerList;
 	
-	private ArrayList<String> playerlistArrayList = new ArrayList<String>();
-	private String[] playerlistArray = {"a", "b", "c"};
+	private ArrayList playerlistArrayList = new ArrayList();
+	private String playerlistArray[] = {"a", "b", "c"};
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,16 +47,10 @@ public class WaitRoomActivity extends Activity {
 	{
 		// Do something
 		// Add player to private list
-		playerlistArrayList.add(Integer.toString(playerid++));
+		playerlistArrayList.add(playerid++);
 		
-		playerlistArray = new String[playerlistArrayList.size()];
-		
-		for(int i = 0; i < playerlistArrayList.size(); i++)
-		{
-			playerlistArray[i] = playerlistArrayList.get(i);
-		}
-		
-		playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));
+		playerlistArray = new String[]{"z", "y", "x"};
+		// playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));
 		
 	}
 

@@ -49,6 +49,8 @@ public class WaitRoomActivity extends Activity {
 		// Add player to private list
 		playerlistArrayList.add(Integer.toString(playerid++));
 		
+		// playerlistArray = (String[])playerlistArrayList.toArray();
+		
 		playerlistArray = new String[playerlistArrayList.size()];
 		
 		for(int i = 0; i < playerlistArrayList.size(); i++)
