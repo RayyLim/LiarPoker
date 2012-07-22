@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;array&apos; in &apos;com.example.liarpoker.WaitRoomActivity&apos; to &apos;playerlistArray&apos;&#x0D;&#x0A;- Original project: &apos;LiarPoker&apos;&#x0D;&#x0A;- Original element: &apos;com.example.liarpoker.WaitRoomActivity.array&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.liarpoker.WaitRoomActivity.playerlistArray&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;array&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.example.liarpoker{WaitRoomActivity.java[WaitRoomActivity^array" name="playerlistArray" references="true" setter="false" stamp="1342920727002" textual="false" version="1.0"/>
+</session>

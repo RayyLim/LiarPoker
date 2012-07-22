@@ -39,7 +39,7 @@ public class WaitRoomActivity extends Activity {
 
      // list.
 
-        playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));        
+        playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, (String[])playerlistArrayList.toArray()));        
     }
 	
 	int playerid = 0;

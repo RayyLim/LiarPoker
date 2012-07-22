@@ -1,7 +1,5 @@
 package com.example.liarpoker;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +12,7 @@ public class WaitRoomActivity extends Activity {
 	
 	private ListView playerList;
 	
-	private ArrayList playerlistArrayList = new ArrayList();
-	private String playerlistArray[] = {"a", "b", "c"};
+	private String array[] = {"a", "b", "c"};
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,16 +36,16 @@ public class WaitRoomActivity extends Activity {
 
      // list.
 
-        playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));        
+        playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, array));
+
+
+        
     }
 	
-	int playerid = 0;
 	public void AddPlayer(View view)
 	{
 		// Do something
 		// Add player to private list
-		playerlistArrayList.add(playerid++);
-		
 	}
 
 }
