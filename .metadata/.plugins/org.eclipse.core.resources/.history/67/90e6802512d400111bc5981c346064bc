@@ -124,8 +124,6 @@ public class GameService extends Service
 		}
 	}
 	
-	private static int submittedAmounts = 0;
-	
 	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedLiarButton(String forPlayer)
 	{
@@ -139,22 +137,18 @@ public class GameService extends Service
 			{ 
 			    listeners.get(i).onSomeoneCalledLiar(submittedNumber);
 			}
-			
-			submittedAmounts = 0;
 		}
 	}
 	
 	public static void submitAmount(String player, int amount)
 	{
-		submittedAmounts++;
-		playerTable.put(player, new Integer(amount));
+		notLiarButtonPressed++;
 		
-		if(submittedAmounts == WaitRoomActivity.playerlistArrayList.size())
+		if(notLiarButtonPressed == WaitRoomActivity.playerlistArrayList.size())
 		{
-			for(int i = 0; i < listeners.size(); i++) 
-			{ 
-			    listeners.get(i).onGameEnded();
-			}
+			// Stop timer
+			timer.cancel();
+			sendCurrentPlayerChanged();
 		}
 	}
 	

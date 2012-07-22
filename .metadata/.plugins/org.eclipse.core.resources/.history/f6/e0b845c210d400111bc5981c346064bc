@@ -76,7 +76,7 @@ public class ResultActivity extends Activity {
     	
     	if(iWin)
     	{
-    		winLoseText.setText("YOU WIN!\nYou got away w/ it this time ;)");
+    		winLoseText.setText("YOU WIN!");
     	}
     	else
     	{

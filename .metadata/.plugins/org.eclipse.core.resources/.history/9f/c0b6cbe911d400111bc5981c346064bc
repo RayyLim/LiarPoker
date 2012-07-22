@@ -6,7 +6,6 @@ public interface GameUpdateListener extends EventListener{
 
 	void onCurrentPlayerChanged(String currentPlayer);
 	void onPlayerHandSubmitted(String currentPlayer, int amount, int number);
-	void onSomeoneCalledLiar(int submittedNumber);
+	void onSomeoneCalledLiar();
 	void onGameEnded();
 }
-

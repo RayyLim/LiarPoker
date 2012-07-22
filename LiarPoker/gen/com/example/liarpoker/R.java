@@ -31,12 +31,12 @@ public final class R {
         public static final int notLiarButton=0x7f070007;
         public static final int notMyTurnLayout=0x7f070003;
         public static final int playerlist=0x7f070013;
-        public static final int resultTable=0x7f070010;
+        public static final int resultTable=0x7f07000f;
         public static final int startgamebutton=0x7f070014;
         public static final int submitButton=0x7f07000b;
         public static final int testRandomEntryForPlayer=0x7f07000c;
         public static final int textView1=0x7f070012;
-        public static final int winLoseText=0x7f07000f;
+        public static final int winLoseText=0x7f070010;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

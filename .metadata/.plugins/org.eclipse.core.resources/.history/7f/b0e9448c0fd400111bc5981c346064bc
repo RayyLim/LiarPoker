@@ -4,7 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-
+    <TextView
+        android:id="@+id/winLoseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..." />
 
     <TableLayout
         android:id="@+id/resultTable"
@@ -13,11 +17,7 @@
 
         
     </TableLayout>
-    <TextView
-        android:id="@+id/winLoseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Loading..." />
+
     <Button
         android:id="@+id/newGameButton"
         android:layout_width="wrap_content"

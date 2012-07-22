@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class ResultActivity extends Activity {
 	
-    boolean iWin = true;
+//    boolean iWin = true;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class ResultActivity extends Activity {
         
         if(myAmount < max)
         {
-        	iWin = false;
+//        	iWin = false;
         }
         
         DisplayWinner();
@@ -72,16 +72,16 @@ public class ResultActivity extends Activity {
     
     public void DisplayWinner()
     {
-    	TextView winLoseText = (TextView) findViewById(R.id.winLoseText);
-    	
-    	if(iWin)
-    	{
-    		winLoseText.setText("YOU WIN!\nYou got away w/ it this time ;)");
-    	}
-    	else
-    	{
-    		winLoseText.setText("you lose .... T____T\nWhy the long face?");
-    	}
+//    	TextView winLoseText = (TextView) findViewById(R.id.winLoseText);
+//    	
+//    	if(iWin)
+//    	{
+//    		winLoseText.setText("YOU WIN!");
+//    	}
+//    	else
+//    	{
+//    		winLoseText.setText("you lose .... T____T\nWhy the long face?");
+//    	}
     }
     
     public void NewGameClick(View view)

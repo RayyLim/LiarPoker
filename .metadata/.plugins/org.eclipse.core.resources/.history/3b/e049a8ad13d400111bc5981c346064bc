@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -108,41 +109,17 @@ public class GameRoomActivity extends Activity
 					}
 				}
 				GameService.submitAmount(WaitRoomActivity.myPlayerName, amount);
-				
-				test_fillOutRestOfPlayers(submittedNumber);
 			}
 
 			public void onGameEnded() {
 			
-				runOnUiThread(new Runnable()
-				{
-					public void run()
-					{
-						GoToReturnActivity();
-					}
-				});
-
+				// TODO: Start transition to results view
 				
 			}
 		});
         
 	}
 	
-	public void GoToReturnActivity()
-	{
-        // Do something in response to button
-    	Intent intent = new Intent(this, ResultActivity.class);
-    	startActivity(intent);
-	}
-	
-	protected void test_fillOutRestOfPlayers(int submittedNumber) {
-		for(int i = 1; i < WaitRoomActivity.playerlistArrayList.size(); i++)
-		{
-			int randomAmount = (int)(Math.random()*10);
-			GameService.submitAmount(WaitRoomActivity.playerlistArrayList.get(i), randomAmount);
-		}
-	}
-
 	@Override
 	protected void onStop()
 	{
@@ -176,7 +153,9 @@ public class GameRoomActivity extends Activity
 		Button notLiarButton = (Button) findViewById(R.id.notLiarButton);
 		notLiarButton.setEnabled(false);
 		
-		GameService.pressedLiarButton(currentPlayerIs);
+        // Do something in response to button
+    	Intent intent = new Intent(this, ResultActivity.class);
+    	startActivity(intent);
 	}
 	
 	public void fakeRandomCurrentPlayerHas(View view)
