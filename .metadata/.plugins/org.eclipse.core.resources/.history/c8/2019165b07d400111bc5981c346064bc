@@ -75,7 +75,6 @@ public class GameRoomActivity extends Activity
 						
 						numberText.setText("");
 						amountText.setText("");
-						
 						ResetCurrentPlayer();
 					}
 				});
@@ -143,10 +142,6 @@ public class GameRoomActivity extends Activity
 
 		Button notLiarButton = (Button) findViewById(R.id.notLiarButton);
 		notLiarButton.setEnabled(false);
-		
-        // Do something in response to button
-    	Intent intent = new Intent(this, ResultActivity.class);
-    	startActivity(intent);
 	}
 	
 	public void fakeRandomCurrentPlayerHas(View view)

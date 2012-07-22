@@ -1,141 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent"
-	android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-	<LinearLayout android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal">
-		<TextView android:id="@+id/meLabel" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:text="Your Numbers: " />
-
-		<TextView android:id="@+id/mynumbersLabel"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:text="MY NUMBERS" />
-	</LinearLayout>
-
-	<LinearLayout
-	    android:id="@+id/notMyTurnLayout"
-	    android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal"
-		android:orientation="vertical"
-	    >
-	<LinearLayout android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal">
-				<TextView
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:text="Current Player's Turn: " />
-		<TextView android:id="@+id/currentPlayerLabel"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:text="Player A" />
-
-
-
-	</LinearLayout>
-			<TextView android:id="@+id/currentPlayerHasLabel"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:text="Waiting" 
-			        android:layout_gravity="center_horizontal"
-			        />
-
-
-
-			<LinearLayout
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content" 
-			            android:layout_gravity="center_horizontal">
-					<Button
-			    android:id="@+id/liarButton"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="Liar!" 
-			    />
-								<Button
-			    android:id="@+id/notLiarButton"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="mmm No?" 
-			    android:onClick="NotLiarButtonPressed"/>
-			</LinearLayout>
-			</LinearLayout>
-
-	<LinearLayout
-	    android:id="@+id/myTurnLayout"
-	    android:layout_gravity="center_horizontal"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:orientation="vertical" >
-			<TextView
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:text="YOUR TURN!" />
-				<LinearLayout
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_gravity="center_horizontal"
-	    android:orientation="horizontal" >
-			<TextView
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			
-			android:text="I got " />
-			
-			<EditText android:id="@+id/igotamount"
-        android:layout_weight="1" 
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:maxLength="1"
-        android:hint="#" 
-        />
-			
-						<TextView
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			
-			android:text=" of " />
-			
-			<EditText android:id="@+id/igotnumber"
-        android:layout_weight="1" 
+        android:layout_gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/meLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Numbers: " />
+
+        <TextView
+            android:id="@+id/mynumbersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MY NUMBERS" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notMyTurnLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:maxLength="1"
-        android:hint="#" 
-        />
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
 
-	</LinearLayout>
-				<Button
-			    android:id="@+id/submitButton"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_gravity="center_horizontal"
-			    android:text="Submit!"
-			    android:onClick="submit"/>
-	</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Player&apos;s Turn: " />
 
-											
-			
-						<Button
-			    android:id="@+id/testRandomEntryForPlayer"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="Make random entry for current player" 
-			    android:onClick="fakeRandomCurrentPlayerHas"/>
-						
-												<Button
-			    android:id="@+id/fakeNoOneCallsLiar"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="No one calls liar" 
-			    android:onClick="fakeNoOneCallsLiar"/>
-												
-																								<Button
-			    android:id="@+id/fakeSomeoneCallsLiar"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="Someone calls liar" 
-			    android:onClick="fakeSomeoneCallsLiar"/>
+            <TextView
+                android:id="@+id/currentPlayerLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player A" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/currentPlayerHasLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Waiting" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/liarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="LiarButtonPressed"
+                android:text="Liar!" />
+
+            <Button
+                android:id="@+id/notLiarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="NotLiarButtonPressed"
+                android:text="mmm No?" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myTurnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="YOUR TURN!" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I got " />
+
+            <EditText
+                android:id="@+id/igotamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="#"
+                android:inputType="numberDecimal"
+                android:maxLength="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" of " />
+
+            <EditText
+                android:id="@+id/igotnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="#"
+                android:inputType="numberDecimal"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="submit"
+            android:text="Submit!" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/testRandomEntryForPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="fakeRandomCurrentPlayerHas"
+        android:text="Make random entry for current player" />
+
+    <Button
+        android:id="@+id/fakeNoOneCallsLiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="fakeNoOneCallsLiar"
+        android:text="No one calls liar" />
+
+    <Button
+        android:id="@+id/fakeSomeoneCallsLiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="fakeSomeoneCallsLiar"
+        android:text="Someone calls liar" />
 
 </LinearLayout>
