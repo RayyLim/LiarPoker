@@ -52,29 +52,14 @@ public class WaitRoomActivity extends Activity {
         			}
         		});
         
-
+        startService(new Intent(this, GetPlayersService.class));
     }
 	
 	@Override
 	protected void onDestroy() {
 	    super.onDestroy();
-	    
+	    stopService(new Intent(this, GetPlayersService.class));
 	}
-	
-	@Override
-	protected void onStop()
-	{
-		super.onStop();
-		stopService(new Intent(this, GetPlayersService.class));
-	}
-	
-	@Override
-	protected void onStart()
-	{
-		super.onStart();
-        startService(new Intent(this, GetPlayersService.class));
-	}
-	
 	
 	public void UpdatePlayerList()
 	{

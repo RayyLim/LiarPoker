@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".WaitRoomActivity" />
-        <activity android:name=".GameRoomActivity" />
         <service android:enabled="true" android:name=".GetPlayersService" />
     </application>
 
