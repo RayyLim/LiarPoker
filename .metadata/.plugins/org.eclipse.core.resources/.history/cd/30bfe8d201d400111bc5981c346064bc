@@ -12,7 +12,7 @@ import android.util.Log;
 public class GameService extends Service 
 {
 	private static final String TAG = "GameService";	
-	private static Timer timer = new Timer();
+	private static Timer timer;
 	
 	@Override
 	public IBinder onBind(Intent intent) 
@@ -83,7 +83,6 @@ public class GameService extends Service
 				return;
 			}
 			
-			handSubmitted = true;
 			for(int i = 0; i < listeners.size(); i++) 
 			{ 
 			    listeners.get(i).onPlayerHandSubmitted(player, amount, number);
@@ -106,7 +105,7 @@ public class GameService extends Service
 	// BUG: NotLiar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedNotLiarButton(String forPlayer)
 	{
-		if(forPlayer == currentPlayerIs && handSubmitted)
+		if(forPlayer == currentPlayerIs)
 		{
 			notLiarButtonPressed++;
 		

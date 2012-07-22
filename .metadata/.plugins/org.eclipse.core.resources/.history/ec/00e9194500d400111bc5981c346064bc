@@ -49,7 +49,6 @@ public class GameService extends Service
 	
 	private static void sendCurrentPlayerChanged()
 	{
-
 		
 		for(int i = 0; i < listeners.size(); i++) 
 		{ 
@@ -59,7 +58,6 @@ public class GameService extends Service
 		}
 		
 		notLiarButtonPressed = 0;
-		handSubmitted = false;
 	}
 	
 	static ArrayList<GameUpdateListener> listeners = new ArrayList<GameUpdateListener>();
@@ -70,20 +68,11 @@ public class GameService extends Service
 	}
 	
 	static int  notLiarButtonPressed = 0;
-	static boolean handSubmitted = false;
 	
 	public static void submitHand(String player, int amount, int number)
 	{
-		
 		if(player == currentPlayerIs)
 		{
-			if(handSubmitted)
-			{
-				// already submitted a hand
-				return;
-			}
-			
-			handSubmitted = true;
 			for(int i = 0; i < listeners.size(); i++) 
 			{ 
 			    listeners.get(i).onPlayerHandSubmitted(player, amount, number);
@@ -91,7 +80,6 @@ public class GameService extends Service
 		}
 		
 		// Timer starts after someone has submitted
-		timer = new Timer();
 		timer.schedule( new TimerTask() 
 		{ 
 			public void run() 
@@ -106,7 +94,7 @@ public class GameService extends Service
 	// BUG: NotLiar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedNotLiarButton(String forPlayer)
 	{
-		if(forPlayer == currentPlayerIs && handSubmitted)
+		if(forPlayer == currentPlayerIs)
 		{
 			notLiarButtonPressed++;
 		
