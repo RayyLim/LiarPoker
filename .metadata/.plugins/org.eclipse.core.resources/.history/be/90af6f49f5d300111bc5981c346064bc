@@ -65,11 +65,11 @@ public class GameRoomActivity extends Activity
 		{
 
 			public void onCurrentPlayerChanged(String currentPlayer) {
-				currentPlayerIs = currentPlayer;
 				runOnUiThread(new Runnable()
 				{
 					public void run()
 					{
+						currentPlayerIs = currentPlayer;
 						ResetCurrentPlayer();
 					}
 				});

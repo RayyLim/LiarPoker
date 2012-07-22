@@ -65,14 +65,10 @@ public class GameRoomActivity extends Activity
 		{
 
 			public void onCurrentPlayerChanged(String currentPlayer) {
+				// TODO Auto-generated method stub
 				currentPlayerIs = currentPlayer;
-				runOnUiThread(new Runnable()
-				{
-					public void run()
-					{
-						ResetCurrentPlayer();
-					}
-				});
+				ResetCurrentPlayer();
+				
 			}
 
 			public void onPlayerHandSubmitted(String currentPlayer, int amount,

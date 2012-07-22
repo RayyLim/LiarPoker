@@ -70,6 +70,7 @@ public class GameRoomActivity extends Activity
 				{
 					public void run()
 					{
+						
 						ResetCurrentPlayer();
 					}
 				});

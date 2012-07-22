@@ -1,0 +1,11 @@
+package com.example.liarpoker;
+
+import java.util.EventListener;
+
+public interface GameUpdateListener extends EventListener{
+
+	void onCurrentPlayerChanged(/*Current Player*/);
+	void onPlayerHandSubmitted(/*Current Player, hand*/);
+	void onSomeoneCalledLiar();
+	void onGameEnded();
+}

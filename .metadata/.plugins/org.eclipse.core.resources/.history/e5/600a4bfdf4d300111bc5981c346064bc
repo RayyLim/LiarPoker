@@ -23,7 +23,6 @@
         <activity android:name=".WaitRoomActivity" />
         <activity android:name=".GameRoomActivity" />
         <service android:enabled="true" android:name=".GetPlayersService" />
-                <service android:enabled="true" android:name=".GameService" />
     </application>
 
 </manifest>

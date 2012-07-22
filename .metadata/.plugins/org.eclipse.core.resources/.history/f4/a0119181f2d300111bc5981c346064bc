@@ -1,0 +1,7 @@
+package com.example.liarpoker;
+
+import java.util.EventListener;
+
+public interface GameUpdateListener extends EventListener{
+
+}
