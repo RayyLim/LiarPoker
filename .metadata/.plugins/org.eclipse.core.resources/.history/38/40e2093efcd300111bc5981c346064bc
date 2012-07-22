@@ -12,7 +12,7 @@ import android.util.Log;
 public class GameService extends Service 
 {
 	private static final String TAG = "GameService";	
-	private static Timer timer = new Timer();
+	private Timer timer = new Timer();
 	
 	@Override
 	public IBinder onBind(Intent intent) 
@@ -24,7 +24,6 @@ public class GameService extends Service
 	public void onCreate() 
 	{			
 		Log.d(TAG, "onCreate");
-		sendCurrentPlayerChanged();
 	}	
 	
 	@Override	
@@ -41,14 +40,15 @@ public class GameService extends Service
 	{			
 		Log.d(TAG, "onStart");
 		
-		// Timer starts after someone has submitted
+		// TODO: Timer needs to start after someone has submitted
+		// End the round at a minute
 		timer.scheduleAtFixedRate( new TimerTask() 
 		{ 
 			public void run() 
 			{ 
 				sendCurrentPlayerChanged();
 			} 
-		 
+
 		}, 0, 15000);
 		
 	}
@@ -57,9 +57,6 @@ public class GameService extends Service
 	
 	private static void sendCurrentPlayerChanged()
 	{
-//		// Stop timer
-//		timer.cancel();
-		
 		for(int i = 0; i < listeners.size(); i++) 
 		{ 
 			currentPlayerPos = (currentPlayerPos+1)%WaitRoomActivity.playerlistArrayList.size();
@@ -108,9 +105,6 @@ public class GameService extends Service
 	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedLiarButton(String forPlayer)
 	{
-//		// Stop timer
-//		timer.cancel();
-		
 		// Tell everyone detected liar button pressed
 	}
 	

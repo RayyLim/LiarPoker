@@ -142,10 +142,9 @@ public class GameRoomActivity extends Activity
 	
 	public void fakeNoOneCallsLiar(View view)
 	{
-		String skipPlayer = currentPlayerIs;
 		for(int i = 0; i < WaitRoomActivity.playerlistArrayList.size()-1; i++)
 		{
-			GameService.pressedNotLiarButton(skipPlayer);
+			GameService.pressedNotLiarButton(currentPlayerIs);
 		}
 	}
 	

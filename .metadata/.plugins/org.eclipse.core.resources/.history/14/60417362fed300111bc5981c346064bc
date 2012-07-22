@@ -108,8 +108,8 @@ public class GameService extends Service
 	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedLiarButton(String forPlayer)
 	{
-//		// Stop timer
-//		timer.cancel();
+		// Stop timer
+		timer.cancel();
 		
 		// Tell everyone detected liar button pressed
 	}
