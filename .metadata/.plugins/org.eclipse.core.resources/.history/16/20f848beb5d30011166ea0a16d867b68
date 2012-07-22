@@ -12,16 +12,14 @@
     <ListView
         android:id="@+id/playerlist"
         android:layout_width="match_parent"
-        android:layout_height="376dp"
-        android:layout_weight="0.46"
-        android:scrollbars="vertical" >
+        android:layout_height="wrap_content" >
     </ListView>
-
+    
     <Button
         android:id="@+id/startgamebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="startGame"
-        android:text="Start Game" />
+        android:text="Start Game"
+        android:onClick="startGame"/>
 
 </LinearLayout>

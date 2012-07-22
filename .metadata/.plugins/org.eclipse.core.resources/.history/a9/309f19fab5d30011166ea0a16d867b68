@@ -58,7 +58,7 @@ public class GetPlayersService extends Service
 				} 
 			} 
 
-		}, 0, 5000);
+		}, 0, 1000);
 
 		
 	}
