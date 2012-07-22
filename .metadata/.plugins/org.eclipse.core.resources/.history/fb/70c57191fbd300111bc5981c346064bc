@@ -151,8 +151,6 @@ public class GameRoomActivity extends Activity
 		// Test: I'm not lying, but someone has higher amount of same #
 	}
 	
-	// BUG: Service should ignore submits for liar and not liar for currentplayer if currentplayer has not submittted hands yet
-	
 	public void fakeMyTurn(View view)
 	{
 		this.playerPosition = 0;

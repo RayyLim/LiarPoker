@@ -40,7 +40,6 @@ public class GameService extends Service
 	{			
 		Log.d(TAG, "onStart");
 		
-		// TODO: Timer needs to start after someone has submitted
 		// End the round at a minute
 		timer.scheduleAtFixedRate( new TimerTask() 
 		{ 
@@ -75,17 +74,6 @@ public class GameService extends Service
 	}
 	
 	static int  notLiarButtonPressed = 0;
-	
-	public static void submitHand(String player, int amount, int number)
-	{
-		if(player == currentPlayerIs)
-		{
-			for(int i = 0; i < listeners.size(); i++) 
-			{ 
-			    listeners.get(i).onPlayerHandSubmitted(player, amount, number);
-			}
-		}
-	}
 	
 	// BUG: Need to ignore all Liar presses and notButton presses after sendCurrentPlayerChanged(), in case the presses were for other player
 	// BUG: NotLiar button should be greyed until change players... so can not send not liar multiple times

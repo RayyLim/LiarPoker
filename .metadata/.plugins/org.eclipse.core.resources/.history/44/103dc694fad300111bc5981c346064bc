@@ -76,7 +76,7 @@ public class GameService extends Service
 	
 	static int  notLiarButtonPressed = 0;
 	
-	public static void submitHand(String player, int amount, int number)
+	public static void submittedHand(String player, int amount, int number)
 	{
 		if(player == currentPlayerIs)
 		{

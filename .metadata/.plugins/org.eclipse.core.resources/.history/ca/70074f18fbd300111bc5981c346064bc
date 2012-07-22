@@ -96,8 +96,7 @@ public class GameRoomActivity extends Activity
 			}
 
 			public void onGameEnded() {
-			
-				// TODO: Start transition to results view
+				// TODO Auto-generated method stub
 				
 			}
 		
@@ -135,6 +134,7 @@ public class GameRoomActivity extends Activity
 		int randomAmount = (int)(Math.random()*10);
 		
 		GameService.submitHand(currentPlayerIs, randomAmount, randomNumber);
+	
 	}
 	
 	// BUG: What happens if someone leaves the game?
@@ -150,8 +150,6 @@ public class GameRoomActivity extends Activity
 		// TODO: End game... If I am lying, i lose... if I was not lying... I win... and everyone else loses
 		// Test: I'm not lying, but someone has higher amount of same #
 	}
-	
-	// BUG: Service should ignore submits for liar and not liar for currentplayer if currentplayer has not submittted hands yet
 	
 	public void fakeMyTurn(View view)
 	{
