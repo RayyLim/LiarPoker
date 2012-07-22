@@ -15,8 +15,6 @@ public class GameService extends Service
 	private static final String TAG = "GameService";	
 	private static Timer timer = new Timer();
 	
-	public static int TIMEOUT = 30000;
-	
 	@Override
 	public IBinder onBind(Intent intent) 
 	{
@@ -27,7 +25,7 @@ public class GameService extends Service
 	public void onCreate() 
 	{			
 		Log.d(TAG, "onCreate");
-
+		sendCurrentPlayerChanged();
 	}	
 	
 	@Override	
@@ -43,7 +41,9 @@ public class GameService extends Service
 	public void onStart(Intent intent, int startid) 
 	{			
 		Log.d(TAG, "onStart");
-		sendCurrentPlayerChanged();
+		
+
+		
 	}
 	
 	public static String currentPlayerIs = "";
@@ -131,8 +131,8 @@ public class GameService extends Service
 	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedLiarButton(String forPlayer)
 	{
-		// Stop timer
-		timer.cancel();
+//		// Stop timer
+//		timer.cancel();
 		
 		if(forPlayer == currentPlayerIs && handSubmitted)
 		{

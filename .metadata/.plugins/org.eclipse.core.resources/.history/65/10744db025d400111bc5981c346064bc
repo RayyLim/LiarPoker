@@ -43,7 +43,7 @@
                 android:id="@+id/currentPlayerLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Loading..." />
+                android:text="Player A" />
         </LinearLayout>
 
         <TextView

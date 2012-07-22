@@ -32,6 +32,7 @@ public class WaitRoomActivity extends Activity {
         
         // Create the text view
         TextView textView = (TextView) findViewById(R.id.textView1);
+        textView.setTextSize(40);
         textView.setText("Your name: " + playername);
         
         playerlistArrayList.add(playername);

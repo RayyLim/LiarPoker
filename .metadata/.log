@@ -1762,3 +1762,90 @@ Binding(ALT+SHIFT+ARROW_LEFT,
 
 !ENTRY org.eclipse.ui 2 2 2012-07-22 04:38:09.545
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:57.649
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:57.837
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:57.895
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:57.953
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:58.013
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:58.071
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:58.129
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:58.189
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:56:58.259
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:31.654
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:31.880
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.016
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.161
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.290
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.435
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.580
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.714
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:32.864
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:47.866
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:48.028
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:48.203
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:48.379
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:48.551
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:48.717
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:48.920
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:49.082
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:49.156
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:57:49.220
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-22 10:58:52.096
+!MESSAGE activity_main.xml: Dimension "40" in attribute "textSize" is missing unit!
