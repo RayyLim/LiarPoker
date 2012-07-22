@@ -100,7 +100,7 @@ public class ResultActivity extends Activity {
     	
     	if(GameService.currentPlayerIs == WaitRoomActivity.myPlayerName && !lastPlayerWasLying)
     	{
-    		winLoseText.setText("YOU WIN!");
+    		winLoseText.setText("YOU WIN!\nOdds are in your favor");
     	}
     	else if(lastPlayerWasLying && iWin)
     	{

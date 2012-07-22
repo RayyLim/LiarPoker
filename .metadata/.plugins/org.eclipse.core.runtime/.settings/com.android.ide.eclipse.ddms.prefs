@@ -8,3 +8,4 @@ logcat.view.colsize.TID=50
 logcat.view.colsize.Tag=107
 logcat.view.colsize.Text=543
 logcat.view.colsize.Time=130
+logcat.view.filters.list=name\: 'GameService', tag\: 'GameService', text\: '', pid\: '', app\: '', level\: 'verbose', 

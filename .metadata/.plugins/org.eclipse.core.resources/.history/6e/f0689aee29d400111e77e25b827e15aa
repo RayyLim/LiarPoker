@@ -90,6 +90,6 @@
         android:layout_height="wrap_content"
         android:onClick="NewGameClick"
         android:layout_gravity="center_horizontal"
-        android:text="New Game...?" />
+        android:text="NewGame...?" />
 
 </LinearLayout>

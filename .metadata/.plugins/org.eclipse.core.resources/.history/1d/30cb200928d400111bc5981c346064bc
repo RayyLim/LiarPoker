@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <ListView
+        android:id="@+id/playerlist"
+        android:layout_width="match_parent"
+        android:layout_height="376dp"
+        android:layout_weight="0.46"
+        android:scrollbars="vertical" >
+    </ListView>
+
+    <Button
+        android:id="@+id/startgamebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startGame"
+        android:text="Start Game" />
+
+</LinearLayout>

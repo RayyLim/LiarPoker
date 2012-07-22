@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="40dp" />
+                android:textSize="40" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Loading..."
-        android:textSize="30dp" />
+        android:textSize="30" />
 
     <Button
         android:id="@+id/newGameButton"
@@ -90,6 +90,6 @@
         android:layout_height="wrap_content"
         android:onClick="NewGameClick"
         android:layout_gravity="center_horizontal"
-        android:text="New Game...?" />
+        android:text="NewGame...?" />
 
 </LinearLayout>

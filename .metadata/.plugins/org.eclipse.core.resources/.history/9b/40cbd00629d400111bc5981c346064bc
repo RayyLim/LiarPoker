@@ -17,14 +17,14 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="player"
-            android:textSize="30dp" />
+            android:textSize="30" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text=" is a "
-            android:textSize="15dp" />
+            android:textSize="15" />
 
         <TextView
             android:id="@+id/lyingOrNot"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="liar?"
-            android:textSize="40dp" />
+            android:textSize="40" />
 
     </LinearLayout>
 
@@ -57,32 +57,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="40dp" />
+                android:textSize="40" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="&apos;s are there?" />
         </LinearLayout>
-
+
         <TableLayout
             android:id="@+id/resultTable"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="8.31"
-            android:scrollbars="vertical" >
+            android:layout_weight="8.31" >
 
         </TableLayout>
     </LinearLayout>
-
+
     <TextView
         android:id="@+id/winLoseText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Loading..."
-        android:textSize="30dp" />
+        android:text="Loading..." />
 
     <Button
         android:id="@+id/newGameButton"
@@ -90,6 +88,6 @@
         android:layout_height="wrap_content"
         android:onClick="NewGameClick"
         android:layout_gravity="center_horizontal"
-        android:text="New Game...?" />
+        android:text="NewGame...?" />
 
 </LinearLayout>
