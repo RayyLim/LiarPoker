@@ -80,17 +80,6 @@
 			
 			android:text="I got " />
 			
-			<EditText android:id="@+id/igotamount"
-        android:layout_weight="1" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="#" />
-			
-						<TextView
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			
-			android:text=" of " />
-			
 			<EditText android:id="@+id/igotnumber"
         android:layout_weight="1" 
         android:layout_width="wrap_content"

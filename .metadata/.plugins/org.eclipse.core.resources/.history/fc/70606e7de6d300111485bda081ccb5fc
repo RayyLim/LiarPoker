@@ -78,24 +78,13 @@
 			<TextView
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			
-			android:text="I got " />
+			android:text="I got: " />
 			
-			<EditText android:id="@+id/igotamount"
+			<EditText android:id="@+id/igot"
         android:layout_weight="1" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="#" />
-			
-						<TextView
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			
-			android:text=" of " />
-			
-			<EditText android:id="@+id/igotnumber"
-        android:layout_weight="1" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="#" />
+        android:hint="@string/igot_message" />
 <!-- Make i got extend all the way. Also make it only take number inputs ... actually should be more restricted... 4 of 9 or something like that. Also need to make your turn stuff disappear when not my turn... -->
 <!--  submit button should not be enabled.. until edit text is filled out... -->
 	</LinearLayout>

@@ -47,7 +47,15 @@ public class GameRoomActivity extends Activity
 		int randomNumber = (int)(Math.random()*10);
 		int randomCount = (int)(Math.random()*10);
 		
-		currentPlayerHas = Integer.toString(randomCount) + " of " + Integer.toString(randomNumber) ;
+		int randomCurrentPlayerHas = randomNumber;
+		
+		while(randomCount > 1)
+		{
+			randomCurrentPlayerHas = randomCurrentPlayerHas * 10 + randomNumber;
+			randomCount--;
+		}
+		
+		currentPlayerHas = Integer.toString(randomCurrentPlayerHas);
 		UpdateGameUI();
 	}
 	
