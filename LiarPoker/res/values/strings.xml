@@ -8,4 +8,6 @@
 <string name="liarpokertitle">Liar Poker</string>
 <string name="button_joingame">Join Game</string>
 <string name="enteryourname_message">Enter Your Name</string>
+<string name="waiting">Waiting</string>
+<string name="igot_message">What do you have?</string>
 </resources>

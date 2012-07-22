@@ -1,0 +1,96 @@
+package com.example.liarpoker;
+
+import android.app.Activity;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class GameRoomActivity extends Activity 
+{
+	public static String currentPlayerHas = "";
+	
+	private int playerPosition = 0;
+	
+	private String waitString = "";
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) 
+	{
+        super.onCreate(savedInstanceState);
+        
+        setContentView(R.layout.gameroom_main);
+        
+        String hand = Integer.toString((int)(Math.random()*100000));
+        
+        TextView handTextView = (TextView) findViewById(R.id.mynumbersLabel);
+        handTextView.setText(hand);
+        
+        
+        Resources res = getResources();
+        waitString = res.getString(R.string.waiting);
+        
+        ResetCurrentPlayer();
+        
+
+        
+        playerPosition = (int)((Math.random() * (WaitRoomActivity.playerlistArrayList.size()+1)) % WaitRoomActivity.playerlistArrayList.size());
+        
+        UpdateGameUI();
+        
+	}
+	
+	public void fakeRandomCurrentPlayerHas(View view)
+	{
+		int randomNumber = (int)(Math.random()*10);
+		int randomCount = (int)(Math.random()*10);
+		
+		int randomCurrentPlayerHas = randomNumber;
+		
+		while(randomCount > 1)
+		{
+			randomCurrentPlayerHas = randomCurrentPlayerHas * 10 + randomNumber;
+			randomCount--;
+		}
+		
+		currentPlayerHas = Integer.toString(randomCurrentPlayerHas);
+		UpdateGameUI();
+	}
+	
+	public void fakeNewCurrentPlayer(View view)
+	{
+		this.playerPosition = (this.playerPosition+1)%WaitRoomActivity.playerlistArrayList.size();
+		ResetCurrentPlayer();
+	}
+	
+	private void ResetCurrentPlayer()
+	{
+        currentPlayerHas = waitString;
+        UpdateGameUI();
+	}
+	
+	private void UpdateGameUI()
+	{
+		TextView currentPlayerIs = (TextView) findViewById(R.id.currentPlayerLabel);
+		TextView currentPlayerHasTextView = (TextView) findViewById(R.id.currentPlayerHasLabel);
+    	Button liarButton = (Button) findViewById(R.id.liarButton);
+    	Button notLiarButton = (Button) findViewById(R.id.notLiarButton);
+    	
+    	currentPlayerIs.setText(WaitRoomActivity.playerlistArrayList.get(this.playerPosition));
+    	currentPlayerHasTextView.setText(currentPlayerHas);
+    	
+		if(currentPlayerHas == waitString)
+        {
+        	// Disable Buttons     	
+        	liarButton.setEnabled(false);
+        	notLiarButton.setEnabled(false);
+        }
+        else
+        {	
+        	// Enable buttons
+        	liarButton.setEnabled(true);
+        	notLiarButton.setEnabled(true);
+        }
+	}
+}

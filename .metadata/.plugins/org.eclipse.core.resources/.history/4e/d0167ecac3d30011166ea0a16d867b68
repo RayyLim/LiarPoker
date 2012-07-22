@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">LiarPoker</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="button_send">SEND!</string>
+<string name="liarpokertitle">Liar Poker</string>
+<string name="button_joingame">Join Game</string>
+<string name="enteryourname_message">Enter Your Name</string>
+<string name="waiting">Waiting...</string>
+</resources>

@@ -1,0 +1,52 @@
+package com.example.liarpoker;
+
+import android.R.bool;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class GameRoomActivity extends Activity 
+{
+	public static String currentPlayerHas = "";
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) 
+	{
+        super.onCreate(savedInstanceState);
+        
+        setContentView(R.layout.gameroom_main);
+        
+        String hand = Integer.toString((int)(Math.random()*100000));
+        
+        TextView handTextView = (TextView) findViewById(R.id.mynumbersLabel);
+        handTextView.setText(hand);
+        
+        TextView currentPlayerHasTextView = (TextView) findViewById(R.id.currentPlayerHasLabel);
+        
+        boolean waitingForPlayer = true;
+        if(waitingForPlayer)
+        {
+        	currentPlayerHasTextView.setText(R.string.waiting);
+        	
+        	// Disable Buttons
+        	Button liarButton = (Button) findViewById(R.id.liarButton);
+        	Button notLiarButton = (Button) findViewById(R.id.notLiarButton);
+        	
+        	liarButton.setEnabled(false);
+        	notLiarButton.setEnabled(false);
+        }
+        else
+        {
+        	currentPlayerHasTextView.setText(currentPlayerHas);
+        	
+        	// Enable buttons
+        	// Disable Buttons
+        	Button liarButton = (Button) findViewById(R.id.liarButton);
+        	Button notLiarButton = (Button) findViewById(R.id.notLiarButton);
+        	
+        	liarButton.setEnabled(true);
+        	notLiarButton.setEnabled(true);
+        }
+	}
+}

@@ -30,7 +30,8 @@ public class GetPlayersService extends Service
 	@Override	
 	public void onDestroy() 
 	{			
-		Log.d(TAG, "onDestroy");		
+		Log.d(TAG, "onDestroy");	
+		timer.cancel();
 	}
 	
 	int playerid = 10;

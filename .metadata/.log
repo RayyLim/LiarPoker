@@ -1152,3 +1152,6 @@ org.eclipse.debug.core.DebugException: Invalid stack frame
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
 !SUBENTRY 1 org.eclipse.jdt.debug 4 100 2012-07-21 18:45:30.918
 !MESSAGE Invalid stack frame
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-07-22 02:07:01.669
+!MESSAGE gameroom_main.xml: Couldn't resolve resource @string/igot_message

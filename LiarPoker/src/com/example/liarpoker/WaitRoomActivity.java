@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class WaitRoomActivity extends Activity {
 	
 	private static ListView playerList;
+	public static String myPlayerName;
 	
 	// BUG: Should this be read-only?
 	public static ArrayList<String> playerlistArrayList = new ArrayList<String>();
@@ -27,12 +28,14 @@ public class WaitRoomActivity extends Activity {
         // Get the message from the intent
         Intent intent = getIntent();
         String playername = intent.getStringExtra(MainActivity.PLAYERNAME);
-
+        myPlayerName = playername;
         
         // Create the text view
         TextView textView = (TextView) findViewById(R.id.textView1);
         textView.setTextSize(40);
         textView.setText("Your name: " + playername);
+        
+        playerlistArrayList.add(playername);
 
         // BUG: List is not scroll-able.... button will not be visible if too many players
         playerList = (ListView) findViewById(R.id.playerlist);     
