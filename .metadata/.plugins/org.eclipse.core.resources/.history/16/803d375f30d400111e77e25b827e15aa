@@ -115,7 +115,7 @@ public class ResultActivity extends Activity {
 			amountView.setGravity(Gravity.CENTER_HORIZONTAL); 
 			
 			row.addView(playerView, 0);
-			row.addView(handView, 1);
+			row.addView(handView, 0);
 			row.addView(amountView,2);
 			
 			table.addView(row);

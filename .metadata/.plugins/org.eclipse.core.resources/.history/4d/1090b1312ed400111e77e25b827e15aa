@@ -47,7 +47,7 @@ public class GameService extends Service
 	}
 	
 	public static String currentPlayerIs = "";
-	public static Hashtable<String, String> playerTable = new Hashtable<String, String>();
+	public static Hashtable<String, Integer> playerTable = new Hashtable<String, Integer>();
 	
 	private static void sendCurrentPlayerChanged()
 	{
@@ -77,7 +77,7 @@ public class GameService extends Service
 	private static int submittedAmount;
 	
 	// TODO: check correct usage of Timer
-	public static void submitBluff(String player, int amount, int number)
+	public static void submitHand(String player, int amount, int number)
 	{
 		
 		if(player == currentPlayerIs)
@@ -126,7 +126,7 @@ public class GameService extends Service
 		}
 	}
 	
-	private static int numPlayersFinishedSubmittingHands = 0;
+	private static int numPlayersFinishedSubmittingAmounts = 0;
 	
 	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedLiarButton(String forPlayer)
@@ -142,16 +142,16 @@ public class GameService extends Service
 			    listeners.get(i).onSomeoneCalledLiar(submittedNumber);
 			}
 			
-			numPlayersFinishedSubmittingHands = 0;
+			numPlayersFinishedSubmittingAmounts = 0;
 		}
 	}
 	
-	public static void submitHand(String player, String playerHand)
+	public static void submitAmount(String player, int amount)
 	{
-		numPlayersFinishedSubmittingHands++;
-		playerTable.put(player, playerHand);
+		numPlayersFinishedSubmittingAmounts++;
+		playerTable.put(player, new Integer(amount));
 		
-		if(numPlayersFinishedSubmittingHands == WaitRoomActivity.playerlistArrayList.size())
+		if(numPlayersFinishedSubmittingAmounts == WaitRoomActivity.playerlistArrayList.size())
 		{
 			for(int i = 0; i < listeners.size(); i++) 
 			{ 
@@ -162,23 +162,10 @@ public class GameService extends Service
 	
 	public static boolean wasLastPlayerLying()
 	{
-		int amount = getAmount(playerTable.get(currentPlayerIs));
+		int amount = (Integer)playerTable.get(currentPlayerIs);
 		
 		// BUG: Are they lying if they have 3 2's but say they only have 2 2's?
 		return amount != submittedAmount;
-	}
-	
-	public static int getAmount(String hand)
-	{
-		int amount = 0;
-		for(int i = 0; i < hand.length(); i++)
-		{
-			if(Integer.parseInt(Character.toString(hand.charAt(i))) == submittedNumber)
-			{
-				amount++;
-			}
-		}
-		return amount;
 	}
 	
 

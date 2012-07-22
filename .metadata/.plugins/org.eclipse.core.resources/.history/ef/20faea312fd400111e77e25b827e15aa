@@ -64,50 +64,36 @@ public class ResultActivity extends Activity {
         
         TextView headerPlayer = new TextView(this);
         headerPlayer.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
-        headerPlayer.setText("player");
+        headerPlayer.setText("PLAYER");
         headerPlayer.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
         headerPlayer.setGravity(Gravity.CENTER_HORIZONTAL);  
+        headerPlayer.setPadding(0, 0, 20, 0);
         header.addView(headerPlayer, 0);
-        
-        TextView headerHand = new TextView(this);
-        headerHand.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
-        headerHand.setText("hand");
-        headerHand.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
-        headerHand.setGravity(Gravity.CENTER_HORIZONTAL);  
-        header.addView(headerHand, 1);
         
         TextView headerCount = new TextView(this);
         headerCount.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize-2); 
-        headerCount.setText("count");
+        headerCount.setText("COUNT");
         headerCount.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
         headerCount.setGravity(Gravity.CENTER_HORIZONTAL);  
-        header.addView(headerCount, 2);
+        header.addView(headerCount, 1);
         
         table.addView(header);
         
      // Get Hashtable Enumeration to get key and value
         Enumeration em = playerAmount.keys();
 		
-        int max = 0;
         while(em.hasMoreElements())
         {
         	String player = em.nextElement().toString();
         	if(player == lastPlayer)
         		continue;
-        	
-        	String playerHand = playerAmount.get(player);
-        	int amount = (Integer)GameService.getAmount(playerHand);
+        	int amount = (Integer)playerAmount.get(player);
 			TableRow row = new TableRow(this);
 			
 			TextView playerView = new TextView(this);
 			playerView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
 			playerView.setText(player);
 			playerView.setGravity(Gravity.CENTER_HORIZONTAL); 
-			
-			TextView handView = new TextView(this);
-			handView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
-			handView.setText(playerHand);
-			handView.setGravity(Gravity.CENTER_HORIZONTAL); 
 	        
 			TextView amountView = new TextView(this);
 			amountView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontsize); 
@@ -115,21 +101,17 @@ public class ResultActivity extends Activity {
 			amountView.setGravity(Gravity.CENTER_HORIZONTAL); 
 			
 			row.addView(playerView, 0);
-			row.addView(handView, 1);
-			row.addView(amountView,2);
+			row.addView(amountView,1);
 			
 			table.addView(row);
 			Log.d("PLAYER", player);
 			Log.d("AMOUNT", Integer.toString(amount));
-			
-			if(amount > max)
-			{
-				max = amount;
-			}
         }
         
+
+        int max = Collections.max(playerAmount.values());
         
-        int myAmount = GameService.getAmount(playerAmount.get(WaitRoomActivity.myPlayerName));
+        int myAmount = playerAmount.get(WaitRoomActivity.myPlayerName);
         Log.d("MAX", Integer.toString(max));
         if(myAmount < max)
         {

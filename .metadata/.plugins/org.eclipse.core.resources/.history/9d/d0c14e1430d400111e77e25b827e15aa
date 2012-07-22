@@ -22,11 +22,6 @@ public class GameRoomActivity extends Activity
 	
 	private String myhand = "";
 	
-	private String generateHand()
-	{
-		return Integer.toString((int)(Math.random()*100000));
-	}
-	
 	@Override
     public void onCreate(Bundle savedInstanceState) 
 	{
@@ -34,7 +29,7 @@ public class GameRoomActivity extends Activity
         
         setContentView(R.layout.gameroom_main);
         
-        myhand = generateHand();
+        myhand = Integer.toString((int)(Math.random()*100000));
         
         TextView handTextView = (TextView) findViewById(R.id.mynumbersLabel);
         handTextView.setText(myhand);
@@ -141,7 +136,8 @@ public class GameRoomActivity extends Activity
 	protected void test_fillOutRestOfPlayers(int submittedNumber) {
 		for(int i = 1; i < WaitRoomActivity.playerlistArrayList.size(); i++)
 		{
-			GameService.submitHand(WaitRoomActivity.playerlistArrayList.get(i), generateHand());
+			int randomAmount = (int)(Math.random()*10);
+			GameService.submitHand(WaitRoomActivity.playerlistArrayList.get(i), randomAmount);
 		}
 	}
 

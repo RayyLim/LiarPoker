@@ -67,6 +67,7 @@ public class ResultActivity extends Activity {
         headerPlayer.setText("player");
         headerPlayer.setTypeface(Typeface.DEFAULT, Typeface.BOLD); 
         headerPlayer.setGravity(Gravity.CENTER_HORIZONTAL);  
+        headerPlayer.setPadding(0, 0, 20, 0);
         header.addView(headerPlayer, 0);
         
         TextView headerHand = new TextView(this);
@@ -88,7 +89,6 @@ public class ResultActivity extends Activity {
      // Get Hashtable Enumeration to get key and value
         Enumeration em = playerAmount.keys();
 		
-        int max = 0;
         while(em.hasMoreElements())
         {
         	String player = em.nextElement().toString();
@@ -115,21 +115,18 @@ public class ResultActivity extends Activity {
 			amountView.setGravity(Gravity.CENTER_HORIZONTAL); 
 			
 			row.addView(playerView, 0);
-			row.addView(handView, 1);
+			row.addView(handView, 0);
 			row.addView(amountView,2);
 			
 			table.addView(row);
 			Log.d("PLAYER", player);
 			Log.d("AMOUNT", Integer.toString(amount));
-			
-			if(amount > max)
-			{
-				max = amount;
-			}
         }
         
+
+        int max = Collections.max(playerAmount.values());
         
-        int myAmount = GameService.getAmount(playerAmount.get(WaitRoomActivity.myPlayerName));
+        int myAmount = playerAmount.get(WaitRoomActivity.myPlayerName);
         Log.d("MAX", Integer.toString(max));
         if(myAmount < max)
         {

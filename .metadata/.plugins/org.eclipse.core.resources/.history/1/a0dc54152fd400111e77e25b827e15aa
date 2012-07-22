@@ -149,7 +149,7 @@ public class GameService extends Service
 	public static void submitHand(String player, String playerHand)
 	{
 		numPlayersFinishedSubmittingHands++;
-		playerTable.put(player, playerHand);
+		playerTable.put(player, myhand);
 		
 		if(numPlayersFinishedSubmittingHands == WaitRoomActivity.playerlistArrayList.size())
 		{

@@ -6,3 +6,6 @@
 1342960931475	Rename local variable 'randomCount'
 1342971279483	Rename local variable 'hand'
 1342973215311	Rename field 'submittedAmounts'
+1342983066531	Rename method 'submitHand'
+1342983086706	Rename method 'submitAmount'
+1342983095358	Rename field 'numPlayersFinishedSubmittingAmounts'

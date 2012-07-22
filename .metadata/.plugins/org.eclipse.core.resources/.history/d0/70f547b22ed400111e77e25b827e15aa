@@ -47,7 +47,7 @@ public class GameService extends Service
 	}
 	
 	public static String currentPlayerIs = "";
-	public static Hashtable<String, String> playerTable = new Hashtable<String, String>();
+	public static Hashtable<String, Integer> playerTable = new Hashtable<String, Integer>();
 	
 	private static void sendCurrentPlayerChanged()
 	{
@@ -146,10 +146,10 @@ public class GameService extends Service
 		}
 	}
 	
-	public static void submitHand(String player, String playerHand)
+	public static void submitHand(String player, int amount)
 	{
 		numPlayersFinishedSubmittingHands++;
-		playerTable.put(player, playerHand);
+		playerTable.put(player, new Integer(amount));
 		
 		if(numPlayersFinishedSubmittingHands == WaitRoomActivity.playerlistArrayList.size())
 		{
@@ -162,23 +162,10 @@ public class GameService extends Service
 	
 	public static boolean wasLastPlayerLying()
 	{
-		int amount = getAmount(playerTable.get(currentPlayerIs));
+		int amount = (Integer)playerTable.get(currentPlayerIs);
 		
 		// BUG: Are they lying if they have 3 2's but say they only have 2 2's?
 		return amount != submittedAmount;
-	}
-	
-	public static int getAmount(String hand)
-	{
-		int amount = 0;
-		for(int i = 0; i < hand.length(); i++)
-		{
-			if(Integer.parseInt(Character.toString(hand.charAt(i))) == submittedNumber)
-			{
-				amount++;
-			}
-		}
-		return amount;
 	}
 	
 

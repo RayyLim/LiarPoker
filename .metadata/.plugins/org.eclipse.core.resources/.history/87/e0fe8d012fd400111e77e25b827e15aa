@@ -149,7 +149,7 @@ public class GameService extends Service
 	public static void submitHand(String player, String playerHand)
 	{
 		numPlayersFinishedSubmittingHands++;
-		playerTable.put(player, playerHand);
+		playerTable.put(player, myhand);
 		
 		if(numPlayersFinishedSubmittingHands == WaitRoomActivity.playerlistArrayList.size())
 		{
@@ -162,7 +162,7 @@ public class GameService extends Service
 	
 	public static boolean wasLastPlayerLying()
 	{
-		int amount = getAmount(playerTable.get(currentPlayerIs));
+		int amount = playerTable.get(currentPlayerIs);
 		
 		// BUG: Are they lying if they have 3 2's but say they only have 2 2's?
 		return amount != submittedAmount;
@@ -178,7 +178,6 @@ public class GameService extends Service
 				amount++;
 			}
 		}
-		return amount;
 	}
 	
 
