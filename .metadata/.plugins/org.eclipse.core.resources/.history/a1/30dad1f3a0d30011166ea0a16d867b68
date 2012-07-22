@@ -42,6 +42,7 @@ public class WaitRoomActivity extends Activity {
 	int playerid = 0;
 	public void AddPlayer(View view)
 	{
+		
 		AddPlayer();
 	}
 	

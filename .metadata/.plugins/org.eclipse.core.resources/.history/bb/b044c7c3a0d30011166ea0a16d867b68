@@ -33,7 +33,7 @@ public class WaitRoomActivity extends Activity {
         textView.setTextSize(40);
         textView.setText("Your name: " + playername);
 
-        // BUG: List is not scroll-able.... button will not be visible if too many players
+        // BUG: List is not scrollable.... button will not be visible if too many players
         playerList = (ListView) findViewById(R.id.playerlist);
 
         AddPlayer();      
@@ -42,6 +42,7 @@ public class WaitRoomActivity extends Activity {
 	int playerid = 0;
 	public void AddPlayer(View view)
 	{
+		
 		AddPlayer();
 	}
 	

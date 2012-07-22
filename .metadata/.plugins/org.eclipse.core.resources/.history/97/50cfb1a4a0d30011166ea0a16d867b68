@@ -33,8 +33,11 @@ public class WaitRoomActivity extends Activity {
         textView.setTextSize(40);
         textView.setText("Your name: " + playername);
 
-        // BUG: List is not scroll-able.... button will not be visible if too many players
         playerList = (ListView) findViewById(R.id.playerlist);
+
+     // By using setAdpater method in listview we an add string array in
+
+     // list.
 
         AddPlayer();      
     }
@@ -42,23 +45,23 @@ public class WaitRoomActivity extends Activity {
 	int playerid = 0;
 	public void AddPlayer(View view)
 	{
+		
 		AddPlayer();
 	}
 	
 	private void AddPlayer()
 	{
 		// Add player to private list
-		playerlistArrayList.add(Integer.toString(playerid++));
-		
-		playerlistArray = new String[playerlistArrayList.size()];
-		
-		for(int i = 0; i < playerlistArrayList.size(); i++)
-		{
-			playerlistArray[i] = playerlistArrayList.get(i);
-		}
-		
-	     // By using setAdpater method in listview we an add string array in list.
-		playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));
+				playerlistArrayList.add(Integer.toString(playerid++));
+				
+				playerlistArray = new String[playerlistArrayList.size()];
+				
+				for(int i = 0; i < playerlistArrayList.size(); i++)
+				{
+					playerlistArray[i] = playerlistArrayList.get(i);
+				}
+				
+				playerList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerlistArray));
 	}
 
 }
