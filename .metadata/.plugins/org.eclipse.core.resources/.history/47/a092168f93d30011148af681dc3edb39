@@ -3,7 +3,6 @@ package com.example.liarpoker;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 public class WaitRoomActivity extends Activity {
@@ -13,24 +12,18 @@ public class WaitRoomActivity extends Activity {
         
         setContentView(R.layout.waitroom_main);
         
-        // Get the message from the intent
+     // Get the message from the intent
         Intent intent = getIntent();
         String playername = intent.getStringExtra(MainActivity.PLAYERNAME);
 
         
         // Create the text view
-        TextView textView = (TextView) findViewById(R.id.textView1);
+        TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText("Your name: " + playername);
 
-        // setContentView(textView);
+        setContentView(textView);
 
     }
-	
-	public void AddPlayer(View view)
-	{
-		// Do something
-		// Add player to private list
-	}
 
 }
