@@ -73,7 +73,8 @@ public class GameService extends Service
 	
 	static int  notLiarButtonPressed = 0;
 	static boolean handSubmitted = false;
-	static int submittedNumber = 0;
+	public static int submittedNumber = 0;
+	private static int submittedAmount;
 	
 	// TODO: check correct usage of Timer
 	public static void submitHand(String player, int amount, int number)
@@ -89,6 +90,7 @@ public class GameService extends Service
 			
 			handSubmitted = true;
 			submittedNumber = number;
+			submittedAmount = amount;
 			for(int i = 0; i < listeners.size(); i++) 
 			{ 
 			    listeners.get(i).onPlayerHandSubmitted(player, amount, number);
@@ -124,7 +126,7 @@ public class GameService extends Service
 		}
 	}
 	
-	private static int submittedAmounts = 0;
+	private static int numPlayersFinishedSubmittingAmounts = 0;
 	
 	// BUG: Liar button should be greyed until change players... so can not send not liar multiple times
 	public static void pressedLiarButton(String forPlayer)
@@ -140,22 +142,30 @@ public class GameService extends Service
 			    listeners.get(i).onSomeoneCalledLiar(submittedNumber);
 			}
 			
-			submittedAmounts = 0;
+			numPlayersFinishedSubmittingAmounts = 0;
 		}
 	}
 	
 	public static void submitAmount(String player, int amount)
 	{
-		submittedAmounts++;
+		numPlayersFinishedSubmittingAmounts++;
 		playerTable.put(player, new Integer(amount));
 		
-		if(submittedAmounts == WaitRoomActivity.playerlistArrayList.size())
+		if(numPlayersFinishedSubmittingAmounts == WaitRoomActivity.playerlistArrayList.size())
 		{
 			for(int i = 0; i < listeners.size(); i++) 
 			{ 
 			    listeners.get(i).onGameEnded();
 			}
 		}
+	}
+	
+	public static boolean wasLastPlayerLying()
+	{
+		int amount = (Integer)playerTable.get(currentPlayerIs);
+		
+		// BUG: Are they lying if they have 3 2's but say they only have 2 2's?
+		return amount != submittedAmount;
 	}
 	
 

@@ -4,8 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+            <TextView
+        android:id="@+id/lastplayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="player" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" is a " />
+    <TextView
+        android:id="@+id/lyingOrNot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="liar?" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lyingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How many " />
+    <TextView
+        android:id="@+id/lastNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="'s you got?" />
+    </LinearLayout>
 
-
+    
+        
     <TableLayout
         android:id="@+id/resultTable"
         android:layout_width="match_parent"
@@ -13,6 +54,9 @@
 
         
     </TableLayout>
+    </LinearLayout>
+
+    
     <TextView
         android:id="@+id/winLoseText"
         android:layout_width="wrap_content"

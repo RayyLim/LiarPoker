@@ -120,9 +120,7 @@ public class GameRoomActivity extends Activity
 					{
 						GoToReturnActivity();
 					}
-				});
-
-				
+				});			
 			}
 		});
         
@@ -147,7 +145,7 @@ public class GameRoomActivity extends Activity
 	protected void onStop()
 	{
 		super.onStop();
-		stopService(new Intent(this, GameService.class));
+		// stopService(new Intent(this, GameService.class));
 	}
 	
 	@Override

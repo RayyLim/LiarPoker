@@ -1,6 +1,5 @@
 package com.example.liarpoker;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -8,7 +7,9 @@ import java.util.Hashtable;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -16,22 +17,40 @@ import android.widget.TextView;
 public class ResultActivity extends Activity {
 	
     boolean iWin = true;
+	private boolean lastPlayerWasLying;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_main);
         
-        Hashtable<String, Integer> playerAmount = new Hashtable<String,Integer>();
+        String lastPlayer = GameService.currentPlayerIs;
+        int lastNumber = GameService.submittedNumber;
+        lastPlayerWasLying = GameService.wasLastPlayerLying();
         
-        int randomNumber = (int)(Math.random()*10);
-        int numPlayers = WaitRoomActivity.playerlistArrayList.size();
-		
-		for(int i = 0; i < numPlayers; i++)
-		{
-			int randomAmount = (int)(Math.random()*10);
-			playerAmount.put(WaitRoomActivity.playerlistArrayList.get(i), new Integer(randomAmount));
-		}
+
+        TextView lastPlayerView = (TextView) findViewById(R.id.lastplayer);
+        lastPlayerView.setText(lastPlayer);
+        
+        TextView lastNumberView = (TextView) findViewById(R.id.lastNumberText);
+        lastNumberView.setText(Integer.toString(lastNumber));
+        
+        TextView lastPlayerWasLyingView = (TextView) findViewById(R.id.lyingOrNot);
+        LinearLayout lyingLayout = (LinearLayout) findViewById(R.id.lyingLayout);
+        
+        if(lastPlayerWasLying)
+        {
+        	lastPlayerWasLyingView.setText("LIAR!");
+        	lyingLayout.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+        	lastPlayerWasLyingView.setText("Saint");
+        	lyingLayout.setVisibility(View.GONE);
+        }
+        
+        // POSSIBLE BUG: playerTable might be null? Because stopservice at dispose of GameRoomActivity
+        Hashtable<String, Integer> playerAmount = GameService.playerTable;
         
         TableLayout table = (TableLayout) findViewById(R.id.resultTable);
         
@@ -41,6 +60,8 @@ public class ResultActivity extends Activity {
         while(em.hasMoreElements())
         {
         	String player = em.nextElement().toString();
+        	if(player == lastPlayer)
+        		continue;
         	int amount = (Integer)playerAmount.get(player);
 			TableRow row = new TableRow(this);
 			TextView playerView = new TextView(this);
@@ -56,8 +77,9 @@ public class ResultActivity extends Activity {
         
 
         int max = Collections.max(playerAmount.values());
-        int myAmount = playerAmount.get(WaitRoomActivity.myPlayerName);
         
+        int myAmount = playerAmount.get(WaitRoomActivity.myPlayerName);
+        Log.d("MAX", Integer.toString(max));
         if(myAmount < max)
         {
         	iWin = false;
@@ -74,7 +96,7 @@ public class ResultActivity extends Activity {
     {
     	TextView winLoseText = (TextView) findViewById(R.id.winLoseText);
     	
-    	if(iWin)
+    	if(lastPlayerWasLying && iWin)
     	{
     		winLoseText.setText("YOU WIN!\nYou got away w/ it this time ;)");
     	}

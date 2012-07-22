@@ -22,21 +22,25 @@ public final class R {
         public static final int fakeSomeoneCallsLiar=0x7f07000e;
         public static final int igotamount=0x7f070009;
         public static final int igotnumber=0x7f07000a;
+        public static final int lastNumberText=0x7f070012;
+        public static final int lastplayer=0x7f07000f;
         public static final int liarButton=0x7f070006;
+        public static final int lyingLayout=0x7f070011;
+        public static final int lyingOrNot=0x7f070010;
         public static final int meLabel=0x7f070001;
-        public static final int menu_settings=0x7f070015;
+        public static final int menu_settings=0x7f070019;
         public static final int myTurnLayout=0x7f070008;
         public static final int mynumbersLabel=0x7f070002;
-        public static final int newGameButton=0x7f070011;
+        public static final int newGameButton=0x7f070015;
         public static final int notLiarButton=0x7f070007;
         public static final int notMyTurnLayout=0x7f070003;
-        public static final int playerlist=0x7f070013;
-        public static final int resultTable=0x7f07000f;
-        public static final int startgamebutton=0x7f070014;
+        public static final int playerlist=0x7f070017;
+        public static final int resultTable=0x7f070013;
+        public static final int startgamebutton=0x7f070018;
         public static final int submitButton=0x7f07000b;
         public static final int testRandomEntryForPlayer=0x7f07000c;
-        public static final int textView1=0x7f070012;
-        public static final int winLoseText=0x7f070010;
+        public static final int textView1=0x7f070016;
+        public static final int winLoseText=0x7f070014;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

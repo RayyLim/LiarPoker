@@ -1,0 +1,114 @@
+package com.example.liarpoker;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Hashtable;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+public class ResultActivity extends Activity {
+	
+    boolean iWin = true;
+	private boolean lastPlayerWasLying;
+    
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.result_main);
+        
+        String lastPlayer = GameService.currentPlayerIs;
+        int lastNumber = GameService.submittedNumber;
+        lastPlayerWasLying = GameService.wasLastPlayerLying();
+        
+        TextView lastPlayerWasLyingView = (TextView) findViewById(R.id.lyingOrNot);
+        
+        if(lastPlayerWasLying)
+        {
+        	lastPlayerWasLyingView.setText("LIAR!");
+        }
+        else
+        {
+        	lastPlayerWasLyingView.setText("Saint");
+        }
+        
+        TextView lastPlayerView = (TextView) findViewById(R.id.lastplayer);
+        TextView lastNumberView = (TextView) findViewById(R.id.lastNumberText);
+        
+        // POSSIBLE BUG: playerTable might be null? Because stopservice at dispose of GameRoomActivity
+        Hashtable<String, Integer> playerAmount = GameService.playerTable;
+        
+//        Hashtable<String, Integer> playerAmount = new Hashtable<String,Integer>();
+//        
+//        int randomNumber = (int)(Math.random()*10);
+//        int numPlayers = WaitRoomActivity.playerlistArrayList.size();
+//		
+//		for(int i = 0; i < numPlayers; i++)
+//		{
+//			int randomAmount = (int)(Math.random()*10);
+//			playerAmount.put(WaitRoomActivity.playerlistArrayList.get(i), new Integer(randomAmount));
+//		}
+//        
+        TableLayout table = (TableLayout) findViewById(R.id.resultTable);
+        
+     // Get Hashtable Enumeration to get key and value
+        Enumeration em = playerAmount.keys();
+		
+        while(em.hasMoreElements())
+        {
+        	String player = em.nextElement().toString();
+        	int amount = (Integer)playerAmount.get(player);
+			TableRow row = new TableRow(this);
+			TextView playerView = new TextView(this);
+			playerView.setText(player);
+			TextView amountView = new TextView(this);
+			amountView.setText(Integer.toString(amount));
+			
+			row.addView(playerView, 0);
+			row.addView(amountView,1);
+			
+			table.addView(row);
+        }
+        
+
+        int max = Collections.max(playerAmount.values());
+        int myAmount = playerAmount.get(WaitRoomActivity.myPlayerName);
+        
+        if(myAmount < max)
+        {
+        	iWin = false;
+        }
+        
+        DisplayWinner();
+        
+        
+        
+        
+    }
+    
+    public void DisplayWinner()
+    {
+    	TextView winLoseText = (TextView) findViewById(R.id.winLoseText);
+    	
+    	if(lastPlayerWasLying && iWin)
+    	{
+    		winLoseText.setText("YOU WIN!\nYou got away w/ it this time ;)");
+    	}
+    	else
+    	{
+    		winLoseText.setText("you lose .... T____T\nWhy the long face?");
+    	}
+    }
+    
+    public void NewGameClick(View view)
+    {
+    	Intent intent = new Intent(this, WaitRoomActivity.class);
+    	startActivity(intent);
+    }
+}
