@@ -201,7 +201,6 @@ public class GameRoomActivity extends Activity
 	{
 		// TODO: End game... If I am lying, i lose... if I was not lying... I win... and everyone else loses
 		// Test: I'm not lying, but someone has higher amount of same #
-		GameService.pressedLiarButton(currentPlayerIs);
 	}
 	
 	// BUG: Service should ignore submits for liar and not liar for currentplayer if currentplayer has not submittted hands yet

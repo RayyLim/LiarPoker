@@ -98,7 +98,7 @@ public class ResultActivity extends Activity {
     {
     	TextView winLoseText = (TextView) findViewById(R.id.winLoseText);
     	
-    	if(GameService.currentPlayerIs == WaitRoomActivity.myPlayerName && !lastPlayerWasLying)
+    	if(GameService.currentPlayerIs == WaitRoomActivity.myPlayerName && lastPlayerWasLying)
     	{
     		winLoseText.setText("YOU WIN!\nOdds are in your favor");
     	}
